@@ -28,3 +28,11 @@ app.get('/', (req, res)=>{
 //    res.send('request received at /')
 res.render('index', {title: 'Vertex'})
 })
+
+if (require.main === module) {
+    app.listen(port, () => {
+        console.log(`Server is running on http://localhost:${port}`);
+    });
+}
+
+module.exports = app;
